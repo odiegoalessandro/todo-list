@@ -8,10 +8,12 @@ export default function Home() {
   const [todo, setTodo] = useState('')
 
   function addTodo(){
-    setTodos((prev) => [...prev, {
-      id: todos.length + 1,
-      title: todo
-    }])
+    if(todo.length > 0){
+      setTodos((prev) => [...prev, {
+        id: todos.length + 1,
+        title: todo
+      }])
+    }
   }
   function removeTodo(todo){
     setTodos((prev) => prev.filter(item => item.id !== todo.id))
