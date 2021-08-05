@@ -17,6 +17,7 @@ export default function TodoForm(){
         value={todo}
         placeholder="Add item"
         onChange={(e) => setTodo(e.target.value)}
+        autoFocus
       />
       <Button
         bgColor="teal.300"

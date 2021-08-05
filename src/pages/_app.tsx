@@ -33,12 +33,12 @@ const GlobalStyles: React.FC = ({ children }) => {
 
 function MyApp({ Component, pageProps }) {
   return (
-    <TodoProvider>
-      <ChakraProvider theme={customTheme}>
+    <ChakraProvider theme={customTheme}>
+      <TodoProvider>
         <GlobalStyles />
         <Component {...pageProps} />
-      </ChakraProvider>
-    </TodoProvider>
+      </TodoProvider>
+    </ChakraProvider>
   )
 }
 

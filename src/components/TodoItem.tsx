@@ -3,7 +3,7 @@ import { DeleteIcon } from "@chakra-ui/icons"
 import { useContext } from "react"
 import { TodoContext } from "../contexts/TodoContext"
 
-export default function TodoItem({ id, content }){
+export default function TodoItem({ content }){
   const { removeTodo } = useContext(TodoContext)
 
   return(
@@ -13,7 +13,6 @@ export default function TodoItem({ id, content }){
       h="auto"
       w="100%"
       minH="60px"
-      key={id}
     >
       <Heading 
         as="h2"

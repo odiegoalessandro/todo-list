@@ -11,14 +11,14 @@ export default function TodoContainer(){
   return(
     <>
       <VStack spacing="10">
-      <TodoForm />
+        <TodoForm />
         {
           todos.length > 0 && (
             <TodoList>
                 {
                   todos.map((item, index) => {
                     return (
-                      <TodoItem content={item} id={index}/>
+                      <TodoItem content={item} key={index}/>
                     )
                   })
                 }
