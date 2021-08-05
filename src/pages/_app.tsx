@@ -4,6 +4,7 @@ import Head from 'next/head'
 import { Global, css } from '@emotion/react'
 import { CSSReset } from '@chakra-ui/css-reset'
 import React from 'react'
+import { TodoProvider } from '../contexts/TodoContext'
 
 const GlobalStyles: React.FC = ({ children }) => {
   return (
@@ -32,10 +33,12 @@ const GlobalStyles: React.FC = ({ children }) => {
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ChakraProvider theme={customTheme}>
-      <GlobalStyles />
-      <Component {...pageProps} />
-    </ChakraProvider>
+    <TodoProvider>
+      <ChakraProvider theme={customTheme}>
+        <GlobalStyles />
+        <Component {...pageProps} />
+      </ChakraProvider>
+    </TodoProvider>
   )
 }
 
