@@ -4,9 +4,7 @@ export default function TodoList({ children }){
   return (
     <VStack
           w="md"
-          h="auto"
-          maxH="200px"
-          minH="10"
+          h="200px"
           rounded="5"
           border="2px solid var(--chakra-colors-gray-400)"
           bgColor="gray.800"

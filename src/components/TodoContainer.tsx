@@ -1,4 +1,4 @@
-import { VStack } from "@chakra-ui/react"
+import { VStack, Flex, Heading } from "@chakra-ui/react"
 import React, { useContext } from "react"
 import { TodoContext } from "../contexts/TodoContext"
 import TodoForm from "./TodoForm"
@@ -13,7 +13,7 @@ export default function TodoContainer(){
       <VStack spacing="10">
         <TodoForm />
         {
-          todos.length > 0 && (
+          todos.length > 0 ? (
             <TodoList>
                 {
                   todos.map((item, index) => {
@@ -22,6 +22,16 @@ export default function TodoContainer(){
                     )
                   })
                 }
+            </TodoList>
+          ) : (
+            <TodoList>
+              <Flex justify="center" align="center" minH="100%">
+                <Heading
+                  size="md"
+                >
+                  The list is empty
+                </Heading>
+              </Flex>
             </TodoList>
           )
         }
